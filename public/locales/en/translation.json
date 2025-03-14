@@ -1,0 +1,110 @@
+{
+  "common": {
+    "language": "Language",
+    "getInTouch": "Get in touch",
+    "viewMyWork": "View my work",
+    "backToTop": "Back to top",
+    "scrolldown": "Scroll down",
+    "role": "Senior Frontend Engineer",
+    "languages": "Languages",
+    "english": "English",
+    "german": "German",
+    "urdu": "Urdu",
+    "fluent": "Full Professional Proficiency",
+    "native": "Native or Bilingual Proficiency",
+    "beginner": "Elementary Proficiency"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "resume": "Resume",
+    "contact": "Contact",
+    "blog": "Blog",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills"
+  },
+  "hero": {
+    "hello": "Hi there, I'm",
+    "job": "Senior Frontend Engineer",
+    "description": "I'm a Senior Frontend JavaScript developer with 6+ years of experience building reliable, scalable solutions. I thrive at the intersection of design and engineering—translating complex ideas into smooth, user-friendly interfaces."
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Turning complex ideas into elegant interfaces",
+    "description1": "I'm a Senior Frontend JavaScript developer with over 6 years of experience building reliable, scalable solutions. I thrive at the intersection of design and engineering—translating complex ideas into smooth, user-friendly interfaces using modern JavaScript, TypeScript, React, and related ecosystems.",
+    "description2": "Currently working at S&P Global since 2023, I develop scalable, responsive web applications using React, Next.js, TypeScript, Redux, and Storybook. I build reusable UI components ensuring cross-browser compatibility using Bootstrap, Tailwind, MUI, and CSS-in-JS libraries.",
+    "description3": "Previously, I worked at iPlex from 2019 to 2023 where I developed React-based applications focusing on performance, UX, and cross-platform compatibility. I created scalable, themable web applications for easy project replication.",
+    "card1": {
+      "title": "Frontend Development",
+      "description": "Building scalable, responsive web applications using React, Next.js, TypeScript, and Redux."
+    },
+    "card2": {
+      "title": "UI Components",
+      "description": "Creating reusable UI components with Bootstrap, Tailwind, MUI, and Ant CSS in JS libraries."
+    },
+    "card3": {
+      "title": "User Experience",
+      "description": "Developing smooth, user-friendly interfaces that prioritize accessibility and performance."
+    },
+    "card4": {
+      "title": "Testing & Optimization",
+      "description": "Implementing comprehensive testing and performance optimization using Jest, Cypress, and various tools."
+    }
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "developedBy": "Developed by"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "description": "I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.",
+    "contactInfo": "Contact Information",
+    "contactInfoDescription": "Feel free to contact me through any of the following methods or fill out the form. I'll get back to you as soon as possible.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "yourMessage": "Your Message",
+    "messagePlaceholder": "Hello, I'd like to talk about...",
+    "sendMessage": "Send Message",
+    "sendMeAMessage": "Send me a message",
+    "workingHours": "Working Hours",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "messageSent": "Message Sent!",
+    "messageSentDescription": "Thank you for reaching out. I'll get back to you as soon as possible!",
+    "sending": "Sending..."
+  },
+  "education": {
+    "title": "Education & Awards",
+    "subtitle": "Academic Background",
+    "card1": {
+      "title": "Bachelor of Science in Computer Science",
+      "subtitle": "Islamia College University Peshawar",
+      "description": "I earned my degree with a 3.89 CGPA, and was honored as the Gold Medalist of my batch."
+    },
+    "card2": {
+      "title": "Gold Medalist",
+      "subtitle": "Highest Academic Achievement",
+      "description": "Awarded the Gold Medal for achieving the highest CGPA in my graduating class at Islamia College University Peshawar."
+    },
+    "card3": {
+      "title": "Gen AI, Cybersecurity, and DevOps Training",
+      "subtitle": "S&P Global",
+      "description": "Completed a comprehensive training on Gen AI, cybersecurity, and DevOps at S&P Global."
+    },
+    "card4": {
+      "title": "Expertise in Cloud Computing, AI/ML, and Risk Compliance",
+      "subtitle": "S&P Global",
+      "description": "Acquired expertise in cloud computing, AI/ML, and risk compliance at S&P Global."
+    }
+  }
+}

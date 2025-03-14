@@ -1,16 +1,29 @@
-
 import React from "react";
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
-    { name: "GitHub", icon: <Github size={18} />, href: "https://github.com" },
-    { name: "LinkedIn", icon: <Linkedin size={18} />, href: "https://linkedin.com/in/basit-ali-b61425354" },
-    { name: "Email", icon: <Mail size={18} />, href: "mailto:basit.ali@toptal.com" },
+    {
+      name: "GitHub",
+      icon: <Github color="black" size={18} />,
+      href: "https://github.com/basit-dev-de",
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin color="black" size={18} />,
+      href: "https://linkedin.com/in/basit-ali-b61425354",
+    },
+    {
+      name: "Email",
+      icon: <Mail color="black" size={18} />,
+      href: "mailto:basit.ali@toptal.com",
+    },
   ];
-  
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -26,9 +39,9 @@ export function Footer() {
             <h3 className="text-xl font-bold text-foreground">
               <span className="text-gradient">Basit Ali</span>
             </h3>
-            <p className="text-foreground/70 mt-1">Senior Frontend Engineer</p>
+            <p className="text-foreground/70 mt-1">{t("common.role")}</p>
           </div>
-          
+
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div className="flex gap-6">
               {socialLinks.map((link) => (
@@ -44,22 +57,22 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            
+
             <button
               className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
               onClick={handleScrollToTop}
             >
-              <span>Back to top</span>
+              <span>{t("common.backToTop")}</span>
               <ArrowUp size={16} />
             </button>
           </div>
         </div>
-        
+
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-foreground/60">
-          <p>© {currentYear} Basit Ali. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">
-            Designed and built with care by Basit Ali
+          <p>
+            © {currentYear} Basit Ali. {t("footer.allRightsReserved")}
           </p>
+          <p className="mt-2 md:mt-0">{t("footer.developedBy")} Basit Ali</p>
         </div>
       </div>
     </footer>
