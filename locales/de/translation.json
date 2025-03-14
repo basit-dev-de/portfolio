@@ -1,0 +1,110 @@
+{
+  "common": {
+    "language": "Sprache",
+    "getInTouch": "Kontaktieren Sie mich",
+    "viewMyWork": "Meine Arbeit anzeigen",
+    "backToTop": "Zur Seite",
+    "scrolldown": "Scrollen Sie runter",
+    "role": "Senior Frontend-Entwickler",
+    "languages": "Sprachen",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "urdu": "Urdu",
+    "fluent": "Fließende Fachkenntnisse",
+    "native": "Muttersprachliche oder zweisprachige Kenntnisse",
+    "beginner": "Grundkenntnisse"
+  },
+  "header": {
+    "home": "Startseite",
+    "about": "Über",
+    "resume": "Lebenslauf",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "skills": "Fähigkeiten"
+  },
+  "hero": {
+    "hello": "Hallo, ich bin",
+    "job": "Senior Frontend-Entwickler",
+    "description": "Ich bin Senior Frontend-JavaScript-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung zuverlässiger, skalierbarer Lösungen. Ich bin an der Schnittstelle von Design und Engineering tätig und setze komplexe Ideen in benutzerfreundliche Oberflächen um."
+  },
+  "about": {
+    "title": "Über mich",
+    "subtitle": "Komplexität in eleganten Oberflächen umsetzen",
+    "description1": "Ich bin Senior Frontend-JavaScript-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung zuverlässiger, skalierbarer Lösungen. Ich arbeite an der Schnittstelle von Design und Engineering und setze komplexe Ideen mithilfe von modernem JavaScript, TypeScript, React und verwandten Ökosystemen in benutzerfreundliche Oberflächen um.",
+    "description2": "Seit 2023 arbeite ich bei S&P Global und entwickle skalierbare, responsive Webanwendungen mit React, Next.js, TypeScript, Redux und Storybook. Ich erstelle wiederverwendbare UI-Komponenten und stelle so die Browserkompatibilität mithilfe von Bootstrap, Tailwind, MUI und CSS-in-JS-Bibliotheken sicher.",
+    "description3": "Zuvor arbeitete ich von 2019 bis 2023 bei iPlex, wo ich React-basierte Anwendungen mit Fokus auf Performance, UX und plattformübergreifender Kompatibilität entwickelte. Ich erstellte skalierbare, thematisierbare Webanwendungen für eine einfache Projektreplikation.",
+    "card1": {
+      "title": "Frontend-Entwicklung",
+      "description": "Skalierbare, responsive Webanwendungen mit React, Next.js, TypeScript und Redux entwickeln."
+    },
+    "card2": {
+      "title": "UI-Komponenten",
+      "description": "Erstellung von wiederverwendbaren UI-Komponenten mit Bootstrap, Tailwind, MUI und Ant CSS in JS-Bibliotheken."
+    },
+    "card3": {
+      "title": "Benutzererfahrung",
+      "description": "Entwicklung von schmuckhaften, benutzerfreundlichen Oberflächen, die die Zuganglichkeit und die Leistung priorisieren."
+    },
+    "card4": {
+      "title": "Testen & Optimierung",
+      "description": "Implementierung von umfassenden Tests und Performanceoptimierung mit Jest, Cypress und verschiedenen Werkzeugen."
+    }
+  },
+  "footer": {
+    "allRightsReserved": "Alle Rechte vorbehalten.",
+    "developedBy": "Entwickelt von"
+  },
+  "contact": {
+    "title": "Lassen Sie sich zusammenarbeiten",
+    "description": "Ich bin immer offen, neue Projekte, kreative Ideen oder geeignete Angebote zu diskutieren.",
+    "contactInfo": "Kontaktinformationen",
+    "contactInfoDescription": "Falls Sie mich per E-Mail kontaktieren wollen, klicken Sie einfach auf die gewünschte Methode. Ich werde Ihnen so schnell wie möglich antworten.",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Ort",
+    "yourName": "Ihr Name",
+    "yourEmail": "Ihre E-Mail",
+    "yourMessage": "Ihre Nachricht",
+    "messagePlaceholder": "Hallo, ich wollte mit Ihnen diskutieren...",
+    "sendMessage": "Nachricht senden",
+    "sendMeAMessage": "Senden Sie mir eine Nachricht",
+    "workingHours": "Arbeitszeiten",
+    "monday": "Montag",
+    "tuesday": "Dienstag",
+    "wednesday": "Mittwoch",
+    "thursday": "Donnerstag",
+    "friday": "Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag",
+    "closed": "Geschlossen",
+    "messageSent": "Nachricht gesendet!",
+    "messageSentDescription": "Vielen Dank, dass Sie mich kontaktiert haben. Ich werde Ihnen so schnell wie möglich antworten!",
+    "sending": "Nachricht wird gesendet..."
+  },
+  "education": {
+    "title": "Ausbildung & Awards",
+    "subtitle": "Akademischer Hintergrund",
+    "card1": {
+      "title": "Bachelor of Science in Computer Science",
+      "subtitle": "Islamia College University Peshawar",
+      "description": "Ich habe mein Studium mit einer CGPA von 3,89 absolviert und wurde als Goldmedaillemeister meiner Klasse ausgezeichnet."
+    },
+    "card2": {
+      "title": "Goldmedaillemeister",
+      "subtitle": "Hoechste akademische Leistung",
+      "description": "Ich wurde als Goldmedaillemeister der Abschlussklasse der Islamia College University Peshawar ausgezeichnet."
+    },
+    "card3": {
+      "title": "Gen AI, Cybersecurity, und DevOps Training",
+      "subtitle": "S&P Global",
+      "description": "Ich habe eine umfassende Trainingskurs zum Thema Gen AI, Cybersecurity und DevOps von S&P Global absolviert."
+    },
+    "card4": {
+      "title": "Expertise in Cloud Computing, AI/ML, und Risk Compliance",
+      "subtitle": "S&P Global",
+      "description": "Ich habe Expertise in Cloud Computing, AI/ML und Risikoverwaltung von S&P Global erworben."
+    }
+  }
+}
