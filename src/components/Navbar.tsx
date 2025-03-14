@@ -101,7 +101,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-3 px-6 md:px-10",
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-border shadow-sm"
+          ? "bg-white/80 border-b border-border shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -161,7 +161,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground focus:outline-none"
+          className="md:hidden text-foreground focus:outline-none z-[500]"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -172,7 +172,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-white/95 backdrop-blur-lg transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 z-40 bg-white/0 backdrop-blur-lg transform transition-transform duration-300 ease-in-out md:hidden",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -191,17 +191,26 @@ export function Navbar() {
                   closeMenu();
                 }}
               >
-                {link.name}
+                {t(link.name)}
               </a>
             ))}
           </div>
 
           <div className="mt-auto mb-10 flex space-x-5">
+            <span
+              onClick={() => changeLanguage(language === "en" ? "de" : "en")}
+              className="flex items-center cursor-pointer justify-center w-8 h-8 rounded-full text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all"
+            >
+              <span className="mr-1">{language === "en" ? "EN" : "DE"}</span>
+              <span>
+                <LanguagesIcon size={18} />
+              </span>
+            </span>
             {socialLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-black hover:text-primary hover:bg-primary/10 transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
                 title={link.name}
