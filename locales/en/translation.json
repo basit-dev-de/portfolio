@@ -12,7 +12,8 @@
     "urdu": "Urdu",
     "fluent": "Full Professional Proficiency",
     "native": "Native or Bilingual Proficiency",
-    "beginner": "Elementary Proficiency"
+    "beginner": "Elementary Proficiency",
+    "all": "All"
   },
   "header": {
     "home": "Home",
@@ -105,6 +106,92 @@
       "title": "Expertise in Cloud Computing, AI/ML, and Risk Compliance",
       "subtitle": "S&P Global",
       "description": "Acquired expertise in cloud computing, AI/ML, and risk compliance at S&P Global."
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "Where I've Worked",
+    "description": "I've had the opportunity to work with some amazing companies. Here's a quick overview of my professional journey.",
+    "keyAchievements": "Key Achievements",
+    "sp-global": {
+      "title": "Frontend Developer",
+      "company": "S&P Global",
+      "location": "Remote",
+      "type": "Full-time",
+      "period": "2023 - Present",
+      "description": "S&P Global provides market data, technology solutions, and financial insights to businesses and governments worldwide.",
+      "responsibilities": [
+        "Developed responsive, user-friendly web applications using React, Next.js, TypeScript, and Redux.",
+        "Implemented complex UI components using Bootstrap, Tailwind, MUI, and Ant CSS in JS libraries.",
+        "Optimized performance and accessibility of the user interface.",
+        "Implemented comprehensive testing and performance optimization using Jest, Cypress, and various tools.",
+        "Collaborated with cross-functional teams to deliver high-quality software solutions.",
+        "Participated in code reviews and provided constructive feedback to fellow developers.",
+        "Implement state management with Redux, Context API & React Query for enhanced performance and accessibility.",
+        "Lead Agile development with daily scrums, ensuring seamless collaboration across teams.",
+        "Contribute to Capital IQ Pro, a premier financial intelligence platform, by developing scalable, modular frontends."
+      ]
+    },
+    "iplex": {
+      "title": "Frontend Developer",
+      "company": "iPlex",
+      "location": "Islamabad",
+      "type": "Full-time",
+      "period": "2019 - 2023",
+      "description": "iPlex is a top-rated digital agency specializing in software development, web applications, and digital marketing for businesses in the U.S.",
+      "responsibilities": [
+        "Developed and maintained React-based applications with a focus on performance, UX, and cross-platform compatibility.",
+        "Created scalable, themable web applications for easy project replication.",
+        "Implemented complex UI components using Bootstrap, Tailwind, MUI, and Ant CSS in JS libraries.",
+        "Conducted daily code reviews to ensure stability, performance, and adherence to Agile methodologies.",
+        "Led frontend development for Al Habib Pharmacy E-commerce Platform using Next.js, TypeScript, and Tailwind CSS.",
+        "Developed a centralized data management system for Salam Telecom DMS Portal for transactions, balance recharges, and user activity."
+      ]
+    }
+  },
+  "skills": {
+    "title": "My Expertise",
+    "subtitle": "Technical Skills and Expertise",
+    "description": "My technical toolkit has been refined over 6+ years of professional experience, focusing on frontend technologies and modern development practices. Here are some of the skills and expertise I bring to the table.",
+    "frontend": "Frontend Frameworks & Libraries",
+    "ui": "UI & Styling",
+    "state": "State Management & Data Fetching",
+    "testing": "Testing & Dev Tools",
+    "frontendArchitecture": "Frontend Architecture",
+    "buildTools": "Build & Performance Optimization",
+    "level": ["Beginner", "Basic", "Intermediate", "Advanced", "Expert"]
+  },
+  "projects": {
+    "title": "Portfolio",
+    "subtitle": "Featured Projects",
+    "description": "A selection of my recent work and personal projects showcasing my skills and experience.",
+    "capital-iq-pro": {
+      "title": "Capital IQ Pro",
+      "description": "Premier financial intelligence platform with modular frontend architecture, real-time market data, and interactive visualizations."
+    },
+    "al-habib-pharmacy": {
+      "title": "Al Habib Pharmacy E-commerce",
+      "description": "Full-featured e-commerce platform for a pharmacy with product catalog, user accounts, and prescription management."
+    },
+    "salam-telecom-dms": {
+      "title": "Salam Telecom DMS Portal",
+      "description": "Centralized data management system for telecom transactions, balance recharges, and user activity tracking."
+    },
+    "market-data-dashboard": {
+      "title": "Market Data Dashboard",
+      "description": "Real-time financial market data visualization dashboard with interactive charts and customizable widgets."
+    },
+    "personal-website": {
+      "title": "Personal Portfolio",
+      "description": "Responsive portfolio website with modern animations, interactions, and optimized performance."
+    },
+    "expense-tracker": {
+      "title": "Expense Tracker App",
+      "description": "Personal finance application with budgeting, expense categorization, and visualization features."
+    },
+    "salam-telecom-dashboard": {
+      "title": "Salam Telecom Dashboard",
+      "description": "Real-time dashboard for telecom transactions, balance recharges, and user activity tracking."
     }
   }
 }

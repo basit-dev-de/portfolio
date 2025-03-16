@@ -1,55 +1,56 @@
 {
   "common": {
     "language": "Sprache",
-    "getInTouch": "Kontaktieren Sie mich",
-    "viewMyWork": "Meine Arbeit anzeigen",
-    "backToTop": "Zur Seite",
-    "scrolldown": "Scrollen Sie runter",
-    "role": "Senior Frontend-Entwickler",
+    "getInTouch": "Kontakt aufnehmen",
+    "viewMyWork": "Meine Arbeit ansehen",
+    "backToTop": "Zurück nach oben",
+    "scrolldown": "Nach unten scrollen",
+    "role": "Senior Frontend Engineer",
     "languages": "Sprachen",
     "english": "Englisch",
     "german": "Deutsch",
     "urdu": "Urdu",
-    "fluent": "Fließende Fachkenntnisse",
+    "fluent": "Vollständige berufliche Kenntnisse",
     "native": "Muttersprachliche oder zweisprachige Kenntnisse",
-    "beginner": "Grundkenntnisse"
+    "beginner": "Grundkenntnisse",
+    "all": "Alle"
   },
   "header": {
     "home": "Startseite",
-    "about": "Über",
+    "about": "Über mich",
     "resume": "Lebenslauf",
     "contact": "Kontakt",
     "blog": "Blog",
     "projects": "Projekte",
     "experience": "Erfahrung",
-    "skills": "Fähigkeiten"
+    "skills": "Fähigkeiten"
   },
   "hero": {
     "hello": "Hallo, ich bin",
-    "job": "Senior Frontend-Entwickler",
-    "description": "Ich bin Senior Frontend-JavaScript-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung zuverlässiger, skalierbarer Lösungen. Ich bin an der Schnittstelle von Design und Engineering tätig und setze komplexe Ideen in benutzerfreundliche Oberflächen um."
+    "job": "Senior Frontend Engineer",
+    "description": "Ich bin ein Senior Frontend JavaScript-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung zuverlässiger, skalierbarer Lösungen. Ich arbeite gerne an der Schnittstelle zwischen Design und Technik – ich übersetze komplexe Ideen in benutzerfreundliche Oberflächen."
   },
   "about": {
-    "title": "Über mich",
-    "subtitle": "Komplexität in eleganten Oberflächen umsetzen",
-    "description1": "Ich bin Senior Frontend-JavaScript-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung zuverlässiger, skalierbarer Lösungen. Ich arbeite an der Schnittstelle von Design und Engineering und setze komplexe Ideen mithilfe von modernem JavaScript, TypeScript, React und verwandten Ökosystemen in benutzerfreundliche Oberflächen um.",
-    "description2": "Seit 2023 arbeite ich bei S&P Global und entwickle skalierbare, responsive Webanwendungen mit React, Next.js, TypeScript, Redux und Storybook. Ich erstelle wiederverwendbare UI-Komponenten und stelle so die Browserkompatibilität mithilfe von Bootstrap, Tailwind, MUI und CSS-in-JS-Bibliotheken sicher.",
-    "description3": "Zuvor arbeitete ich von 2019 bis 2023 bei iPlex, wo ich React-basierte Anwendungen mit Fokus auf Performance, UX und plattformübergreifender Kompatibilität entwickelte. Ich erstellte skalierbare, thematisierbare Webanwendungen für eine einfache Projektreplikation.",
+    "title": "Über mich",
+    "subtitle": "Komplexe Ideen in elegante Oberflächen verwandeln",
+    "description1": "Ich bin ein Senior Frontend JavaScript-Entwickler mit über 6 Jahren Erfahrung in der Entwicklung zuverlässiger, skalierbarer Lösungen. Ich arbeite gerne an der Schnittstelle zwischen Design und Technik – ich übersetze komplexe Ideen in benutzerfreundliche Oberflächen mit modernem JavaScript, TypeScript, React und verwandten Ökosystemen.",
+    "description2": "Derzeit arbeite ich seit 2023 bei S&P Global und entwickle skalierbare, responsive Webanwendungen mit React, Next.js, TypeScript, Redux und Storybook. Ich erstelle wiederverwendbare UI-Komponenten, die browserübergreifende Kompatibilität mit Bootstrap, Tailwind, MUI und CSS-in-JS-Bibliotheken sicherstellen.",
+    "description3": "Zuvor habe ich von 2019 bis 2023 bei iPlex gearbeitet, wo ich React-basierte Anwendungen mit Schwerpunkt auf Leistung, Benutzerfreundlichkeit und plattformübergreifender Kompatibilität entwickelt habe. Ich habe skalierbare, thematisierbare Webanwendungen für eine einfache Projektreplikation erstellt.",
     "card1": {
       "title": "Frontend-Entwicklung",
-      "description": "Skalierbare, responsive Webanwendungen mit React, Next.js, TypeScript und Redux entwickeln."
+      "description": "Entwicklung skalierbarer, responsiver Webanwendungen mit React, Next.js, TypeScript und Redux."
     },
     "card2": {
       "title": "UI-Komponenten",
-      "description": "Erstellung von wiederverwendbaren UI-Komponenten mit Bootstrap, Tailwind, MUI und Ant CSS in JS-Bibliotheken."
+      "description": "Erstellung wiederverwendbarer UI-Komponenten mit Bootstrap, Tailwind, MUI und Ant CSS in JS-Bibliotheken."
     },
     "card3": {
       "title": "Benutzererfahrung",
-      "description": "Entwicklung von schmuckhaften, benutzerfreundlichen Oberflächen, die die Zuganglichkeit und die Leistung priorisieren."
+      "description": "Entwicklung benutzerfreundlicher Oberflächen, die Barrierefreiheit und Leistung priorisieren."
     },
     "card4": {
-      "title": "Testen & Optimierung",
-      "description": "Implementierung von umfassenden Tests und Performanceoptimierung mit Jest, Cypress und verschiedenen Werkzeugen."
+      "title": "Tests & Optimierung",
+      "description": "Durchführung umfassender Tests und Leistungsoptimierungen mit Jest, Cypress und verschiedenen Tools."
     }
   },
   "footer": {
@@ -57,17 +58,17 @@
     "developedBy": "Entwickelt von"
   },
   "contact": {
-    "title": "Lassen Sie sich zusammenarbeiten",
-    "description": "Ich bin immer offen, neue Projekte, kreative Ideen oder geeignete Angebote zu diskutieren.",
+    "title": "Lassen Sie uns zusammenarbeiten",
+    "description": "Ich bin immer offen für neue Projekte, kreative Ideen oder die Möglichkeit, Teil Ihrer Vision zu sein.",
     "contactInfo": "Kontaktinformationen",
-    "contactInfoDescription": "Falls Sie mich per E-Mail kontaktieren wollen, klicken Sie einfach auf die gewünschte Methode. Ich werde Ihnen so schnell wie möglich antworten.",
+    "contactInfoDescription": "Sie können mich gerne über eine der folgenden Methoden kontaktieren oder das Formular ausfüllen. Ich werde mich so schnell wie möglich bei Ihnen melden.",
     "email": "E-Mail",
     "phone": "Telefon",
-    "location": "Ort",
+    "location": "Standort",
     "yourName": "Ihr Name",
     "yourEmail": "Ihre E-Mail",
     "yourMessage": "Ihre Nachricht",
-    "messagePlaceholder": "Hallo, ich wollte mit Ihnen diskutieren...",
+    "messagePlaceholder": "Hallo, ich möchte über... sprechen",
     "sendMessage": "Nachricht senden",
     "sendMeAMessage": "Senden Sie mir eine Nachricht",
     "workingHours": "Arbeitszeiten",
@@ -80,31 +81,123 @@
     "sunday": "Sonntag",
     "closed": "Geschlossen",
     "messageSent": "Nachricht gesendet!",
-    "messageSentDescription": "Vielen Dank, dass Sie mich kontaktiert haben. Ich werde Ihnen so schnell wie möglich antworten!",
-    "sending": "Nachricht wird gesendet..."
+    "messageSentDescription": "Vielen Dank für Ihre Nachricht. Ich werde mich so schnell wie möglich bei Ihnen melden!",
+    "sending": "Wird gesendet..."
   },
   "education": {
-    "title": "Ausbildung & Awards",
+    "title": "Ausbildung & Auszeichnungen",
     "subtitle": "Akademischer Hintergrund",
     "card1": {
-      "title": "Bachelor of Science in Computer Science",
+      "title": "Bachelor of Science in Informatik",
       "subtitle": "Islamia College University Peshawar",
-      "description": "Ich habe mein Studium mit einer CGPA von 3,89 absolviert und wurde als Goldmedaillemeister meiner Klasse ausgezeichnet."
+      "description": "Ich habe meinen Abschluss mit einem CGPA von 3,89 gemacht und wurde als Goldmedaillengewinner meines Jahrgangs ausgezeichnet."
     },
     "card2": {
-      "title": "Goldmedaillemeister",
-      "subtitle": "Hoechste akademische Leistung",
-      "description": "Ich wurde als Goldmedaillemeister der Abschlussklasse der Islamia College University Peshawar ausgezeichnet."
+      "title": "Goldmedaillengewinner",
+      "subtitle": "Höchste akademische Leistung",
+      "description": "Auszeichnung mit der Goldmedaille für den höchsten CGPA in meinem Abschlussjahrgang am Islamia College University Peshawar."
     },
     "card3": {
-      "title": "Gen AI, Cybersecurity, und DevOps Training",
+      "title": "Gen AI, Cybersicherheit und DevOps-Schulung",
       "subtitle": "S&P Global",
-      "description": "Ich habe eine umfassende Trainingskurs zum Thema Gen AI, Cybersecurity und DevOps von S&P Global absolviert."
+      "description": "Abschluss einer umfassenden Schulung zu Gen AI, Cybersicherheit und DevOps bei S&P Global."
     },
     "card4": {
-      "title": "Expertise in Cloud Computing, AI/ML, und Risk Compliance",
+      "title": "Expertise in Cloud Computing, AI/ML und Risikocompliance",
       "subtitle": "S&P Global",
-      "description": "Ich habe Expertise in Cloud Computing, AI/ML und Risikoverwaltung von S&P Global erworben."
+      "description": "Erwerb von Expertise in Cloud Computing, AI/ML und Risikocompliance bei S&P Global."
+    }
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "subtitle": "Wo ich gearbeitet habe",
+    "description": "Ich hatte die Gelegenheit, mit einigen großartigen Unternehmen zusammenzuarbeiten. Hier ist ein kurzer Überblick über meinen beruflichen Werdegang.",
+    "keyAchievements": "Wichtige Erfolge",
+    "sp-global": {
+      "title": "Frontend-Entwickler",
+      "company": "S&P Global",
+      "location": "Remote",
+      "type": "Vollzeit",
+      "period": "2023 - Heute",
+      "description": "S&P Global bietet Marktdaten, Technologielösungen und finanzielle Einblicke für Unternehmen und Regierungen weltweit.",
+      "responsibilities": [
+        "Entwicklung responsiver, benutzerfreundlicher Webanwendungen mit React, Next.js, TypeScript und Redux.",
+        "Implementierung komplexer UI-Komponenten mit Bootstrap, Tailwind, MUI und Ant CSS in JS-Bibliotheken.",
+        "Optimierung der Leistung und Barrierefreiheit der Benutzeroberfläche.",
+        "Durchführung umfassender Tests und Leistungsoptimierungen mit Jest, Cypress und verschiedenen Tools.",
+        "Zusammenarbeit mit funktionsübergreifenden Teams zur Bereitstellung hochwertiger Softwarelösungen.",
+        "Teilnahme an Code-Reviews und konstruktives Feedback an Mitentwickler.",
+        "Implementierung des Zustandsmanagements mit Redux, Context API & React Query für verbesserte Leistung und Barrierefreiheit.",
+        "Leitung der Agile-Entwicklung mit täglichen Scrums, um eine nahtlose Zusammenarbeit zwischen den Teams zu gewährleisten.",
+        "Beitrag zu Capital IQ Pro, einer führenden Plattform für Finanzintelligenz, durch die Entwicklung skalierbarer, modularer Frontends."
+      ]
+    },
+    "iplex": {
+      "title": "Frontend-Entwickler",
+      "company": "iPlex",
+      "location": "Islamabad",
+      "type": "Vollzeit",
+      "period": "2019 - 2023",
+      "description": "iPlex ist eine erstklassige Digitalagentur, die sich auf Softwareentwicklung, Webanwendungen und digitales Marketing für Unternehmen in den USA spezialisiert hat.",
+      "responsibilities": [
+        "Entwicklung und Wartung von React-basierten Anwendungen mit Schwerpunkt auf Leistung, Benutzerfreundlichkeit und plattformübergreifender Kompatibilität.",
+        "Erstellung skalierbarer, thematisierbarer Webanwendungen für eine einfache Projektreplikation.",
+        "Implementierung komplexer UI-Komponenten mit Bootstrap, Tailwind, MUI und Ant CSS in JS-Bibliotheken.",
+        "Durchführung täglicher Code-Reviews, um Stabilität, Leistung und Einhaltung von Agile-Methoden sicherzustellen.",
+        "Leitung der Frontend-Entwicklung für die Al Habib Pharmacy E-Commerce-Plattform mit Next.js, TypeScript und Tailwind CSS.",
+        "Entwicklung eines zentralen Datenmanagementsystems für das Salam Telecom DMS-Portal für Transaktionen, Guthabenaufladungen und Benutzeraktivitäten."
+      ]
+    }
+  },
+  "skills": {
+    "title": "Meine Expertise",
+    "subtitle": "Technische Fähigkeiten und Expertise",
+    "description": "Mein technisches Toolkit wurde über mehr als 6 Jahre Berufserfahrung verfeinert, mit Schwerpunkt auf Frontend-Technologien und modernen Entwicklungspraktiken. Hier sind einige der Fähigkeiten und Expertise, die ich mitbringe.",
+    "frontend": "Frontend-Frameworks & Bibliotheken",
+    "ui": "UI & Styling",
+    "state": "Zustandsmanagement & Datenabruf",
+    "testing": "Tests & Entwicklertools",
+    "frontendArchitecture": "Frontend-Architektur",
+    "buildTools": "Build & Leistungsoptimierung",
+    "level": [
+      "Anfänger",
+      "Grundkenntnisse",
+      "Mittelstufe",
+      "Fortgeschritten",
+      "Experte"
+    ]
+  },
+  "projects": {
+    "title": "Portfolio",
+    "subtitle": "Ausgewählte Projekte",
+    "description": "Eine Auswahl meiner aktuellen Arbeiten und persönlichen Projekte, die meine Fähigkeiten und Erfahrungen zeigen.",
+    "capital-iq-pro": {
+      "title": "Capital IQ Pro",
+      "description": "Führende Plattform für Finanzintelligenz mit modularer Frontend-Architektur, Echtzeit-Marktdaten und interaktiven Visualisierungen."
+    },
+    "al-habib-pharmacy": {
+      "title": "Al Habib Pharmacy E-Commerce",
+      "description": "Vollständige E-Commerce-Plattform für eine Apotheke mit Produktkatalog, Benutzerkonten und Rezeptverwaltung."
+    },
+    "salam-telecom-dms": {
+      "title": "Salam Telecom DMS-Portal",
+      "description": "Zentrales Datenmanagementsystem für Telekommunikationstransaktionen, Guthabenaufladungen und Benutzeraktivitäten."
+    },
+    "market-data-dashboard": {
+      "title": "Marktdaten-Dashboard",
+      "description": "Echtzeit-Dashboard zur Visualisierung von Finanzmarktdaten mit interaktiven Diagrammen und anpassbaren Widgets."
+    },
+    "personal-website": {
+      "title": "Persönliches Portfolio",
+      "description": "Responsive Portfolio-Website mit modernen Animationen, Interaktionen und optimierter Leistung."
+    },
+    "expense-tracker": {
+      "title": "Ausgaben-Tracker-App",
+      "description": "Persönliche Finanzanwendung mit Budgetierung, Ausgabenkategorisierung und Visualisierungsfunktionen."
+    },
+    "salam-telecom-dashboard": {
+      "title": "Salam Telecom Dashboard",
+      "description": "Echtzeit-Dashboard für Telekommunikationstransaktionen, Guthabenaufladungen und Nutzeraktivitätsverfolgung."
     }
   }
 }
