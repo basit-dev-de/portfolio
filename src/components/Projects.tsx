@@ -64,7 +64,8 @@ export function Projects() {
         "Real-time financial market data visualization dashboard with interactive charts and customizable widgets.",
       image: "/images/market-data.png",
       tags: ["React", "TypeScript", "Recharts", "RTK Query", "TailwindCSS"],
-      github: "#",
+      github: "https://github.com/basit-dev-de/market-dashboard",
+      link: "https://basit-dev-de.github.io/market-dashboard/",
     },
     {
       id: "personal-website",
@@ -83,7 +84,8 @@ export function Projects() {
         "Personal finance application with budgeting, expense categorization, and visualization features.",
       image: "/images/expense-tracker.png",
       tags: ["React", "Firebase", "Context API", "Chart.js"],
-      github: "#",
+      github: "https://github.com/basit-dev-de/expense-tracker",
+      link: "https://basit-dev-de.github.io/expense-tracker/",
     },
     {
       id: "salam-telecom-dashboard",
@@ -100,6 +102,16 @@ export function Projects() {
         "RTK Query",
       ],
       link: "https://salam.sa/en/personal",
+    },
+    {
+      id: "personal-website-2",
+      title: "Personal Portfolio 2",
+      description:
+        "Responsive portfolio website with modern animations, interactions, and optimized performance.",
+      image: "/images/portfolio-2.png",
+      tags: ["React", "Vite", "TailwindCSS", "Framer Motion"],
+      github: "https://github.com/basit-dev-de/portfolio-2",
+      link: "https://basit-dev-de.github.io/portfolio-2/",
     },
   ];
 
