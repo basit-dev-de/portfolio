@@ -192,6 +192,10 @@
     "salam-telecom-dashboard": {
       "title": "Salam Telecom Dashboard",
       "description": "Real-time dashboard for telecom transactions, balance recharges, and user activity tracking."
+    },
+    "personal-website-2": {
+      "title": "Personal Portfolio 2",
+      "description": "Responsive portfolio website with modern animations, interactions, and optimized performance."
     }
   }
 }
