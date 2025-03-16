@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Project {
   id: string;
@@ -13,67 +14,92 @@ interface Project {
 }
 
 export function Projects() {
+  const { t } = useTranslation();
   const projects: Project[] = [
     {
       id: "capital-iq-pro",
       title: "Capital IQ Pro",
       description:
         "Premier financial intelligence platform with modular frontend architecture, real-time market data, and interactive visualizations.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      tags: ["React", "Redux", "TypeScript", "D3.js", "MUI"],
-      link: "#",
+      image: "/images/capital-iq-pro.png",
+      tags: [
+        "React",
+        "Redux",
+        "JavaScript",
+        "TypeScript",
+        "CSS-in-JS",
+        "Bootstrap",
+        "React Query",
+        "Apollo Client",
+        "Microfrontends",
+        "Jest",
+        "Cypress",
+        "Storybook",
+        "Docker",
+      ],
+      link: "https://www.spglobal.com/market-intelligence/en/solutions/products/sp-capital-iq-pro",
     },
     {
       id: "al-habib-pharmacy",
       title: "Al Habib Pharmacy E-commerce",
       description:
         "Full-featured e-commerce platform for a pharmacy with product catalog, user accounts, and prescription management.",
-      image:
-        "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=2070&auto=format&fit=crop",
+      image: "/images/epharmacy.png",
       tags: ["Next.js", "TypeScript", "TailwindCSS", "Redux", "SEO"],
-      link: "#",
+      link: "https://alhabibpharmacy.com/",
     },
     {
-      id: "salam-telecom",
+      id: "salam-telecom-dms",
       title: "Salam Telecom DMS Portal",
       description:
         "Centralized data management system for telecom transactions, balance recharges, and user activity tracking.",
-      image:
-        "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop",
+      image: "/images/salam-dms-portal.jpeg",
       tags: ["React", "Context API", "Bootstrap", "Chart.js", "Redux"],
-      link: "#",
+      link: "https://salammobile.sa/en/",
     },
     {
       id: "market-data-dashboard",
       title: "Market Data Dashboard",
       description:
         "Real-time financial market data visualization dashboard with interactive charts and customizable widgets.",
-      image:
-        "https://images.unsplash.com/photo-1642790551116-18e150f248e5?q=80&w=2070&auto=format&fit=crop",
+      image: "/images/market-data.png",
       tags: ["React", "TypeScript", "Recharts", "RTK Query", "TailwindCSS"],
       github: "#",
     },
     {
-      id: "portfolio-website",
+      id: "personal-website",
       title: "Personal Portfolio",
       description:
         "Responsive portfolio website with modern animations, interactions, and optimized performance.",
-      image:
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop",
+      image: "/images/portfolio-1.png",
       tags: ["React", "Vite", "TailwindCSS", "Framer Motion"],
-      github: "#",
-      link: "#",
+      github: "https://github.com/basit-dev-de/portfolio",
+      link: "https://basit-dev.com",
     },
     {
       id: "expense-tracker",
       title: "Expense Tracker App",
       description:
         "Personal finance application with budgeting, expense categorization, and visualization features.",
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1926&auto=format&fit=crop",
+      image: "/images/expense-tracker.png",
       tags: ["React", "Firebase", "Context API", "Chart.js"],
       github: "#",
+    },
+    {
+      id: "salam-telecom-dashboard",
+      title: "SALAM Telecom Dashboard",
+      description:
+        "A real-time dashboard displaying SIM activation data through dynamic tables and interactive map plotting.",
+      image: "/images/salam-dashboard.jpeg",
+      tags: [
+        "React",
+        "Redux",
+        "Context API",
+        "Chart.js",
+        "Material UI",
+        "RTK Query",
+      ],
+      link: "https://salam.sa/en/personal",
     },
   ];
 
@@ -94,22 +120,21 @@ export function Projects() {
             className="inline-block mb-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium"
             data-aos="fade-up"
           >
-            Portfolio
+            {t("projects.title")}
           </div>
           <h2
             className="section-heading"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Featured Projects
+            {t("projects.subtitle")}
           </h2>
           <p
             className="max-w-2xl mx-auto text-foreground/70"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            A selection of my recent work and personal projects showcasing my
-            skills and experience.
+            {t("projects.description")}
           </p>
         </div>
 
@@ -126,7 +151,9 @@ export function Projects() {
                 )}
                 onClick={() => setFilter(tag)}
               >
-                {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                {tag === "all"
+                  ? t("common.all")
+                  : tag.charAt(0).toUpperCase() + tag.slice(1)}
               </button>
             ))}
           </div>
@@ -172,9 +199,11 @@ export function Projects() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t(`projects.${project.id}.title`)}
+                </h3>
                 <p className="text-foreground/70 text-sm mb-4">
-                  {project.description}
+                  {t(`projects.${project.id}.description`)}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
