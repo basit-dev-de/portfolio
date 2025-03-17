@@ -113,6 +113,16 @@ export function Projects() {
       github: "https://github.com/basit-dev-de/portfolio-2",
       link: "https://basit-dev-de.github.io/portfolio-2/",
     },
+    {
+      id: "job-copilot",
+      title: "Job Copilot",
+      description:
+        "The Job Copilot is an intelligent job application assistant that helps you track, manage, and automate your job search. Whether you're applying to multiple positions or following up on leads, this tool keeps everything organized in one place.",
+      image: "/images/job-copilot.png",
+      tags: ["React", "Vite", "TailwindCSS", "Typescript", "SWR", "RSS Feed"],
+      github: "https://github.com/basit-dev-de/job-copilot",
+      link: "https://basit-dev-de.github.io/job-copilot/",
+    },
   ];
 
   const [filter, setFilter] = useState<string>("all");
@@ -194,7 +204,7 @@ export function Projects() {
                       className="w-8 h-8 rounded-full bg-white/90 text-foreground hover:text-primary flex items-center justify-center backdrop-blur-sm opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                       title="View on GitHub"
                     >
-                      <Github size={16} />
+                      <Github color="black" size={16} />
                     </a>
                   )}
                   {project.link && (
@@ -205,7 +215,7 @@ export function Projects() {
                       className="w-8 h-8 rounded-full bg-white/90 text-foreground hover:text-primary flex items-center justify-center backdrop-blur-sm opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75"
                       title="Visit website"
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink color="black" size={16} />
                     </a>
                   )}
                 </div>
