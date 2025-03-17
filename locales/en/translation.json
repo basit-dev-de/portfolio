@@ -194,8 +194,12 @@
       "description": "Real-time dashboard for telecom transactions, balance recharges, and user activity tracking."
     },
     "personal-website-2": {
-      "title": "Personal Portfolio 2",
+      "title": "Personal Portfolio V2",
       "description": "Responsive portfolio website with modern animations, interactions, and optimized performance."
+    },
+    "job-copilot": {
+      "title": "Job Copilot",
+      "description": "The Job Copilot is an intelligent job application assistant that helps you track, manage, and automate your job search. Whether you're applying to multiple positions or following up on leads, this tool keeps everything organized in one place."
     }
   }
 }
