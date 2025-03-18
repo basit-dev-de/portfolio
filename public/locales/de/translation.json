@@ -206,6 +206,10 @@
     "job-copilot": {
       "title": "Job Copilot",
       "description": "TDer Job Copilot ist ein intelligenter Bewerbungsassistent, der Sie bei der Verfolgung, Verwaltung und Automatisierung Ihrer Jobsuche unterstützt. Egal, ob Sie sich auf mehrere Stellen bewerben oder Leads nachverfolgen – mit diesem Tool behalten Sie alles an einem Ort im Blick."
+    },
+    "quantum": {
+      "title": "Quantenhandelsplattform",
+      "description": "Eine Fintech-Handelsplattform mit Echtzeit-Datenvisualisierung, WebSockets und Machine-Learning-Integrationen."
     }
   }
 }

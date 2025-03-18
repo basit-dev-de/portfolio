@@ -123,6 +123,26 @@ export function Projects() {
       github: "https://github.com/basit-dev-de/job-copilot",
       link: "https://basit-dev-de.github.io/job-copilot/",
     },
+    {
+      id: "quantum",
+      title: "Quantum Trading Platform",
+      description:
+        "A fintech trading platform featuring real-time data visualization, WebSockets, and machine learning integrations.",
+      image: "/images/quantum.png",
+      tags: [
+        "React",
+        "Vite",
+        "TailwindCSS",
+        "Typescript",
+        "React Query",
+        "Chart.js",
+        "REST APIs",
+        "Apollo Client",
+        "GitHub Actions",
+      ],
+      github: "https://github.com/basit-dev-de/quantum-trading-platform",
+      link: "https://basit-dev-de.github.io/quantum-trading-platform/",
+    },
   ];
 
   const [filter, setFilter] = useState<string>("all");
