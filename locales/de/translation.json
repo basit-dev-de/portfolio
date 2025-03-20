@@ -210,6 +210,10 @@
     "quantum": {
       "title": "Quantenhandelsplattform",
       "description": "Eine Fintech-Handelsplattform mit Echtzeit-Datenvisualisierung, WebSockets und Machine-Learning-Integrationen."
+    },
+    "smart-home": {
+      "title": "Smart-Home-Automatisierung",
+      "description": "Die Smart Home Automation-Plattform ermöglicht Nutzern die mühelose Steuerung und Überwachung ihrer Smart-Home-Geräte. Mit Echtzeit-Updates, automatisierter Zeitplanung und Sprachassistenten-Integration sorgt sie für ein nahtloses und intelligentes Heimmanagement-Erlebnis."
     }
   }
 }
