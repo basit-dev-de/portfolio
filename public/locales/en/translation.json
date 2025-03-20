@@ -204,6 +204,10 @@
     "quantum": {
       "title": "Quantum Trading Platform",
       "description": "A fintech trading platform featuring real-time data visualization, WebSockets, and machine learning integrations."
+    },
+    "smart-home": {
+      "title": "Smart Home Automation",
+      "description": "The Smart Home Automation platform enables users to control and monitor their smart home devices effortlessly. With real-time updates, scheduling automation, and voice assistant integration, it provides a seamless and intelligent home management experience."
     }
   }
 }

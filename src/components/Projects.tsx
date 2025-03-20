@@ -143,6 +143,27 @@ export function Projects() {
       github: "https://github.com/basit-dev-de/quantum-trading-platform",
       link: "https://basit-dev-de.github.io/quantum-trading-platform/",
     },
+    {
+      id: "smart-home",
+      title: "Smart Home Automation",
+      description:
+        "The Smart Home Automation platform enables users to control and monitor their smart home devices effortlessly. With real-time updates, scheduling automation, and voice assistant integration, it provides a seamless and intelligent home management experience.",
+      image: "/images/smart-home.png",
+      tags: [
+        "React",
+        "Vite",
+        "TailwindCSS",
+        "Typescript",
+        "React Query",
+        "Alexa",
+        "Jest",
+        "Chart.js",
+        "WebSockets",
+        "GitHub Actions",
+      ],
+      github: "https://github.com/basit-dev-de/smart-home-automation",
+      link: "https://basit-dev-de.github.io/smart-home-automation/",
+    },
   ];
 
   const [filter, setFilter] = useState<string>("all");
