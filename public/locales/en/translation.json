@@ -208,6 +208,10 @@
     "smart-home": {
       "title": "Smart Home Automation",
       "description": "The Smart Home Automation platform enables users to control and monitor their smart home devices effortlessly. With real-time updates, scheduling automation, and voice assistant integration, it provides a seamless and intelligent home management experience."
+    },
+    "talent-matrix": {
+      "title": "Talent Matrix",
+      "description": "Talent Matrix is a modern HR job posting and application tracking system designed to simplify recruitment workflows. Whether you're an HR professional, hiring manager, or recruiter, Talent Matrix streamlines job postings, tracks applications, and enhances hiring efficiency with a user-friendly interface."
     }
   }
 }
