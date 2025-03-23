@@ -214,6 +214,10 @@
     "smart-home": {
       "title": "Smart-Home-Automatisierung",
       "description": "Die Smart Home Automation-Plattform ermöglicht Nutzern die mühelose Steuerung und Überwachung ihrer Smart-Home-Geräte. Mit Echtzeit-Updates, automatisierter Zeitplanung und Sprachassistenten-Integration sorgt sie für ein nahtloses und intelligentes Heimmanagement-Erlebnis."
+    },
+    "talent-matrix": {
+      "title": "Talent Matrix",
+      "description": "Talent Matrix ist ein modernes HR-System für Stellenausschreibungen und Bewerbungsverfolgung, das die Arbeitsabläufe im Recruiting vereinfacht. Ob HR-Experte, Personalmanager oder Recruiter – Talent Matrix optimiert Stellenausschreibungen, verfolgt Bewerbungen und steigert die Effizienz der Personalbeschaffung mit einer benutzerfreundlichen Oberfläche."
     }
   }
 }
