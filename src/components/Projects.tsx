@@ -184,6 +184,26 @@ export function Projects() {
       github: 'https://github.com/basit-dev-de/talent-matrix',
       link: 'https://basit-dev-de.github.io/talent-matrix/',
     },
+    {
+      id: 'impact-cv',
+      title: 'Impact CV',
+      description:
+        "ImpactCV is a modern, intuitive, and user-friendly web application designed to empower you to create professional and impactful resumes (CVs) with ease. Whether you're just starting your career or looking to make a change, ImpactCV provides the tools and flexibility you need to showcase your skills and experience effectively.",
+      image: '/images/impact-cv.png',
+      tags: [
+        'React',
+        'Vite',
+        'TailwindCSS',
+        'Typescript',
+        'Lucide Icons',
+        'Jest',
+        'Radix UI',
+        'GitHub Actions',
+        'OpenAI API',
+      ],
+      github: 'https://github.com/basit-dev-de/impact-cv',
+      link: 'https://asfand-dev.github.io/impact-cv/',
+    },
   ];
 
   const [filter, setFilter] = useState<string>('all');

@@ -212,6 +212,10 @@
     "talent-matrix": {
       "title": "Talent Matrix",
       "description": "Talent Matrix is a modern HR job posting and application tracking system designed to simplify recruitment workflows. Whether you're an HR professional, hiring manager, or recruiter, Talent Matrix streamlines job postings, tracks applications, and enhances hiring efficiency with a user-friendly interface."
+    },
+    "impact-cv": {
+      "title": "Impact CV",
+      "description": "ImpactCV is a modern, intuitive, and user-friendly web application designed to empower you to create professional and impactful resumes (CVs) with ease. Whether you're just starting your career or looking to make a change, ImpactCV provides the tools and flexibility you need to showcase your skills and experience effectively."
     }
   }
 }
