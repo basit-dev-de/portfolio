@@ -1,0 +1,1099 @@
+<html>
+  <head>
+    <title>Folder / Files to AI Prompt</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .drop-zone {
+        border: 2px dashed #ccc;
+        border-radius: 5px;
+        padding: 50px;
+        text-align: center;
+        margin: 20px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .drop-zone.dragover {
+        background-color: #f0f0f0;
+        border-color: #888;
+      }
+      #output {
+        white-space: pre-wrap;
+        font-family: monospace;
+        background-color: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        max-height: 600px;
+        overflow-y: auto;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .stats {
+        background-color: #f0f0f0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+      }
+      .stat-item {
+        display: flex;
+        align-items: center;
+      }
+      .stat-label {
+        font-weight: 600;
+        margin-right: 5px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      .copy-btn {
+        background-color: #2196f3;
+      }
+      .copy-btn:hover {
+        background-color: #0b7dda;
+      }
+      .success-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1000;
+      }
+      .show {
+        opacity: 1;
+      }
+      #fileList {
+        margin: 20px 0;
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+      .file-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .file-filter {
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        width: 300px;
+      }
+      .config-panel {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        border: 1px solid #ddd;
+      }
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 15px;
+      }
+      .tab {
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        margin-right: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .tab.active {
+        background-color: white;
+        border-bottom: 1px solid white;
+        margin-bottom: -1px;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .spinner {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Tree view styling */
+      .tree-view ul {
+        list-style-type: none;
+        padding-left: 20px;
+        margin: 0;
+      }
+      .tree-view > ul {
+        padding-left: 0;
+      }
+      .tree-item {
+        padding: 3px 0;
+        display: flex;
+        align-items: center;
+      }
+      .tree-folder {
+        cursor: pointer;
+        user-select: none;
+      }
+      .toggle-icon {
+        width: 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .folder-name,
+      .file-name {
+        margin-left: 5px;
+      }
+      .folder-name {
+        font-weight: 500;
+      }
+      .collapsed {
+        display: none;
+      }
+      .js-ts-file {
+        color: #0066cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Project to AI Prompt</h1>
+
+      <div class="header">
+        <div class="buttons">
+          <input
+            type="file"
+            id="fileInput"
+            webkitdirectory=""
+            directory=""
+            multiple=""
+            class="hidden"
+          />
+          <button onclick="document.getElementById('fileInput').click()">
+            Select Folder / Files
+          </button>
+          <button id="generateWithDepsButton" disabled="">
+            Generate Prompt with Dependencies
+          </button>
+          <button id="generateOnlySelectedButton" disabled="">
+            Generate Prompt - Only Selected Files
+          </button>
+          <button id="copyButton" class="copy-btn" disabled="">
+            Copy to Clipboard
+          </button>
+        </div>
+      </div>
+
+      <div class="drop-zone" id="dropZone">
+        Drag and drop Folder / Files here
+      </div>
+
+      <div id="fileListContainer" class="hidden">
+        <h2>Select Files</h2>
+        <div class="file-controls">
+          <div>
+            <input
+              type="text"
+              id="fileFilter"
+              class="file-filter"
+              placeholder="Filter files..."
+            />
+          </div>
+          <div>
+            <button id="selectJsTs">Select JS/TS Files</button>
+            <button id="selectAll">Select All</button>
+            <button id="deselectAll">Deselect All</button>
+          </div>
+        </div>
+        <div id="fileList" class="tree-view"></div>
+      </div>
+
+      <div class="tabs hidden" id="tabsContainer">
+        <div class="tab active" data-tab="output">Output</div>
+        <div class="tab" data-tab="config">Configuration</div>
+      </div>
+
+      <div class="tab-content active" id="outputTab">
+        <div class="stats" id="statsPanel">
+          <div class="stat-item">
+            <span class="stat-label">Files processed:</span>
+            <span id="fileCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Total lines:</span>
+            <span id="lineCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Estimated tokens:</span>
+            <span id="tokenCount">0</span>
+          </div>
+        </div>
+
+        <pre id="output"></pre>
+      </div>
+
+      <div class="tab-content" id="configTab">
+        <div class="config-panel">
+          <h3>Configuration</h3>
+          <div>
+            <label>
+              <input type="checkbox" id="resolveImports" checked="" />
+              Resolve and include imports (JS/TS files)
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" id="includeDependencies" checked="" />
+              Include package.json when available
+            </label>
+          </div>
+          <div>
+            <label>
+              Maximum recursion depth:
+              <input type="number" id="maxDepth" min="1" max="20" value="10" />
+            </label>
+          </div>
+          <h4>File exclusions</h4>
+          <div>
+            <label>
+              Excluded extensions (comma-separated):
+              <input
+                type="text"
+                id="excludedExtensions"
+                style="width: 100%"
+                value=".jpg,.jpeg,.png,.gif,.bmp,.tiff,.svg,.webp,.ico,.mp3,.mp4,.avi,.mov,.wmv,.flv,.wav,.ogg,.webm,.ttf,.otf,.woff,.woff2,.eot"
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Excluded files (comma-separated):
+              <input
+                type="text"
+                id="excludedFiles"
+                style="width: 100%"
+                value=".DS_Store,package-lock.json,yarn.lock,pnpm-lock.yaml"
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Excluded folders (comma-separated):
+              <input
+                type="text"
+                id="excludedFolders"
+                style="width: 100%"
+                value="node_modules/,.git/,dist/,build/,public/,.next/,.vscode/,.temp/"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="copySuccess" class="success-message">Copied to clipboard!</div>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <script>
+      // DOM Elements
+      const dropZone = document.getElementById('dropZone');
+      const fileInput = document.getElementById('fileInput');
+      const output = document.getElementById('output');
+      const generateWithDepsButton = document.getElementById(
+        'generateWithDepsButton'
+      );
+      const generateOnlySelectedButton = document.getElementById(
+        'generateOnlySelectedButton'
+      );
+      const copyButton = document.getElementById('copyButton');
+      const fileCountElement = document.getElementById('fileCount');
+      const lineCountElement = document.getElementById('lineCount');
+      const tokenCountElement = document.getElementById('tokenCount');
+      const copySuccess = document.getElementById('copySuccess');
+      const fileList = document.getElementById('fileList');
+      const fileListContainer = document.getElementById('fileListContainer');
+      const selectJsTsButton = document.getElementById('selectJsTs');
+      const selectAllButton = document.getElementById('selectAll');
+      const deselectAllButton = document.getElementById('deselectAll');
+      const fileFilter = document.getElementById('fileFilter');
+      const tabsContainer = document.getElementById('tabsContainer');
+      const tabs = document.querySelectorAll('.tab');
+      const loading = document.getElementById('loading');
+
+      // Configuration elements
+      const resolveImports = document.getElementById('resolveImports');
+      const includeDependencies = document.getElementById(
+        'includeDependencies'
+      );
+      const maxDepth = document.getElementById('maxDepth');
+      const excludedExtensionsInput =
+        document.getElementById('excludedExtensions');
+      const excludedFilesInput = document.getElementById('excludedFiles');
+      const excludedFoldersInput = document.getElementById('excludedFolders');
+
+      // Global state
+      let allFiles = [];
+      let processedDependencies = new Map();
+      let packageJsonContent = null;
+
+      // Config defaults
+      const CONFIG = {
+        maxFileSize: 1024 * 1024, // 1MB
+        maxDepth: 10,
+        aliasMap: {
+          '@': 'src',
+          '@components': 'src/components',
+          '@utils': 'src/utils',
+          '@shared': 'src/shared',
+          '@lib': 'src/lib',
+          '@hooks': 'src/hooks',
+          '@assets': 'src/assets',
+          '@api': 'src/api',
+        },
+      };
+
+      // Get excluded files/folders/extensions from inputs
+      function getExclusionConfig() {
+        return {
+          extensions: excludedExtensionsInput.value
+            .split(',')
+            .map((ext) => ext.trim()),
+          files: excludedFilesInput.value.split(',').map((file) => file.trim()),
+          folders: excludedFoldersInput.value
+            .split(',')
+            .map((folder) => folder.trim()),
+        };
+      }
+
+      // Handle tabs
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          document.querySelectorAll('.tab-content').forEach((content) => {
+            content.classList.remove('active');
+          });
+
+          document
+            .getElementById(`${tab.dataset.tab}Tab`)
+            .classList.add('active');
+        });
+      });
+
+      // Handle file input changes
+      fileInput.addEventListener('change', async (e) => {
+        const files = Array.from(e.target.files);
+        await handleFiles(files);
+      });
+
+      // Drag and drop handlers
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+      });
+
+      dropZone.addEventListener('drop', async (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+
+        const items = e.dataTransfer.items;
+        const files = [];
+
+        for (const item of items) {
+          if (item.webkitGetAsEntry) {
+            const entry = item.webkitGetAsEntry();
+            if (entry) {
+              files.push(...(await getFilesFromEntry(entry)));
+            }
+          }
+        }
+
+        await handleFiles(files);
+      });
+
+      // Initial file handling
+      async function handleFiles(files) {
+        showLoading();
+
+        try {
+          allFiles = [];
+          const exclusions = getExclusionConfig();
+
+          // Filter files based on exclusion rules
+          for (const file of files) {
+            const path = file.filePath || file.webkitRelativePath;
+
+            // Skip excluded files
+            if (exclusions.files.some((name) => path.endsWith(name))) {
+              continue;
+            }
+
+            // Skip excluded extensions
+            if (
+              exclusions.extensions.some((ext) =>
+                path.toLowerCase().endsWith(ext)
+              )
+            ) {
+              continue;
+            }
+
+            // Skip excluded folders
+            if (shouldSkipFolder(path, exclusions.folders)) {
+              continue;
+            }
+
+            // Read file content
+            try {
+              const content = await readFileContent(file);
+
+              // Check if it's package.json
+              if (path.endsWith('package.json')) {
+                packageJsonContent = content;
+              }
+
+              allFiles.push({
+                path,
+                name: file.name,
+                content,
+                selected: false,
+                size: file.size,
+                lastModified: file.lastModified,
+                isJsTs: /\.(js|jsx|ts|tsx)$/i.test(path),
+              });
+            } catch (error) {
+              console.error(`Error reading file ${path}:`, error);
+            }
+          }
+
+          // Display list of files as a tree
+          displayFileTree();
+          fileListContainer.classList.remove('hidden');
+          tabsContainer.classList.remove('hidden');
+          generateWithDepsButton.disabled = false;
+          generateOnlySelectedButton.disabled = false;
+        } finally {
+          hideLoading();
+        }
+      }
+
+      // Build file tree structure
+      function buildFileTree() {
+        const tree = {};
+        const filterText = fileFilter.value.toLowerCase();
+
+        // Filter files based on search input
+        const filesToDisplay = filterText
+          ? allFiles.filter((file) =>
+              file.path.toLowerCase().includes(filterText)
+            )
+          : allFiles;
+
+        for (const file of filesToDisplay) {
+          const parts = file.path.split('/');
+          let currentLevel = tree;
+
+          // Create folder structure
+          for (let i = 0; i < parts.length - 1; i++) {
+            const part = parts[i];
+            if (!currentLevel[part]) {
+              currentLevel[part] = {
+                isFolder: true,
+                children: {},
+              };
+            }
+            currentLevel = currentLevel[part].children;
+          }
+
+          // Add file to the deepest folder
+          const fileName = parts[parts.length - 1];
+          currentLevel[fileName] = {
+            isFolder: false,
+            file: file,
+          };
+        }
+
+        return tree;
+      }
+
+      // Display files as a tree
+      function displayFileTree() {
+        const tree = buildFileTree();
+        fileList.innerHTML = '';
+
+        const ul = document.createElement('ul');
+        renderFileTreeNode(tree, ul);
+        fileList.appendChild(ul);
+      }
+
+      // Render a single node in the file tree
+      function renderFileTreeNode(node, parentElement) {
+        // Sort entries: folders first, then alphabetically
+        const entries = Object.entries(node).sort((a, b) => {
+          if (a[1].isFolder !== b[1].isFolder) {
+            return a[1].isFolder ? -1 : 1;
+          }
+          return a[0].localeCompare(b[0]);
+        });
+
+        for (const [name, item] of entries) {
+          const li = document.createElement('li');
+
+          if (item.isFolder) {
+            // Create folder node
+            const folderDiv = document.createElement('div');
+            folderDiv.className = 'tree-item tree-folder';
+
+            const toggleIcon = document.createElement('span');
+            toggleIcon.className = 'toggle-icon';
+            toggleIcon.textContent = '^';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = isFolderChecked(item);
+            checkbox.addEventListener('change', () => {
+              toggleFolderSelection(item, checkbox.checked);
+              displayFileTree();
+            });
+
+            const folderName = document.createElement('span');
+            folderName.className = 'folder-name';
+            folderName.textContent = name;
+
+            folderDiv.appendChild(toggleIcon);
+            folderDiv.appendChild(checkbox);
+            folderDiv.appendChild(folderName);
+            li.appendChild(folderDiv);
+
+            const childrenContainer = document.createElement('ul');
+
+            // Toggle folder expand/collapse
+            folderDiv.addEventListener('click', (e) => {
+              // Don't trigger if clicking the checkbox
+              if (e.target !== checkbox) {
+                childrenContainer.classList.toggle('collapsed');
+                toggleIcon.textContent = childrenContainer.classList.contains(
+                  'collapsed'
+                )
+                  ? '>'
+                  : '^';
+                e.stopPropagation();
+              }
+            });
+
+            // Render children
+            renderFileTreeNode(item.children, childrenContainer);
+            li.appendChild(childrenContainer);
+          } else {
+            // Create file node
+            const fileDiv = document.createElement('div');
+            fileDiv.className = 'tree-item';
+
+            const spacer = document.createElement('span');
+            spacer.className = 'toggle-icon';
+            spacer.innerHTML = '&nbsp;';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = item.file.selected;
+            checkbox.addEventListener('change', () => {
+              item.file.selected = checkbox.checked;
+              displayFileTree();
+            });
+
+            const fileName = document.createElement('span');
+            fileName.className = `file-name ${
+              item.file.isJsTs ? 'js-ts-file' : ''
+            }`;
+            fileName.textContent = name;
+
+            fileDiv.appendChild(spacer);
+            fileDiv.appendChild(checkbox);
+            fileDiv.appendChild(fileName);
+            li.appendChild(fileDiv);
+          }
+
+          parentElement.appendChild(li);
+        }
+      }
+
+      // Check if a folder is fully selected
+      function isFolderChecked(folder) {
+        let hasFiles = false;
+        let allSelected = true;
+
+        function checkChildren(node) {
+          for (const [, item] of Object.entries(node)) {
+            if (!item.isFolder) {
+              hasFiles = true;
+              if (!item.file.selected) {
+                allSelected = false;
+                return;
+              }
+            } else {
+              checkChildren(item.children);
+            }
+          }
+        }
+
+        checkChildren(folder.children);
+        return hasFiles && allSelected;
+      }
+
+      // Select or deselect all files in a folder
+      function toggleFolderSelection(folder, selected) {
+        function selectChildren(node) {
+          for (const [, item] of Object.entries(node)) {
+            if (!item.isFolder) {
+              item.file.selected = selected;
+            } else {
+              selectChildren(item.children);
+            }
+          }
+        }
+
+        selectChildren(folder.children);
+      }
+
+      // Generate prompt with dependencies
+      generateWithDepsButton.addEventListener('click', async () => {
+        const selectedFiles = allFiles.filter((file) => file.selected);
+
+        if (selectedFiles.length === 0) {
+          alert('Please select at least one file');
+          return;
+        }
+
+        showLoading();
+
+        try {
+          processedDependencies = new Map();
+
+          // Process imports if needed
+          if (resolveImports.checked) {
+            for (const file of selectedFiles) {
+              if (file.isJsTs) {
+                await processImports(file);
+              } else {
+                // For non-JS/TS files, just add them as is
+                processedDependencies.set(file.path, file.content);
+              }
+            }
+          } else {
+            // Just add the selected files without processing imports
+            for (const file of selectedFiles) {
+              processedDependencies.set(file.path, file.content);
+            }
+          }
+
+          // Add package.json if enabled
+          if (includeDependencies.checked && packageJsonContent) {
+            processedDependencies.set('package.json', packageJsonContent);
+          }
+
+          // Generate the prompt
+          const promptText = formatPrompt(
+            Array.from(processedDependencies.entries())
+          );
+          output.textContent = promptText;
+
+          // Update stats
+          const lineCount = promptText.split('\n').length;
+          fileCountElement.textContent = processedDependencies.size;
+          lineCountElement.textContent = lineCount;
+          tokenCountElement.textContent = estimateTokens(promptText);
+
+          // Enable copy button
+          copyButton.disabled = false;
+
+          // Switch to output tab
+          document.querySelector('[data-tab="output"]').click();
+        } catch (error) {
+          console.error('Error generating prompt:', error);
+          alert(`Error generating prompt: ${error.message}`);
+        } finally {
+          hideLoading();
+        }
+      });
+
+      // Generate prompt with only selected files
+      generateOnlySelectedButton.addEventListener('click', () => {
+        const selectedFiles = allFiles.filter((file) => file.selected);
+
+        if (selectedFiles.length === 0) {
+          alert('Please select at least one file');
+          return;
+        }
+
+        showLoading();
+
+        try {
+          const selectedFilesMap = new Map();
+
+          // Just collect the selected files without dependencies
+          for (const file of selectedFiles) {
+            selectedFilesMap.set(file.path, file.content);
+          }
+
+          // Generate the prompt
+          const promptText = formatPrompt(
+            Array.from(selectedFilesMap.entries())
+          );
+          output.textContent = promptText;
+
+          // Update stats
+          const lineCount = promptText.split('\n').length;
+          fileCountElement.textContent = selectedFiles.length;
+          lineCountElement.textContent = lineCount;
+          tokenCountElement.textContent = estimateTokens(promptText);
+
+          // Enable copy button
+          copyButton.disabled = false;
+
+          // Switch to output tab
+          document.querySelector('[data-tab="output"]').click();
+        } catch (error) {
+          console.error('Error generating prompt:', error);
+          alert(`Error generating prompt: ${error.message}`);
+        } finally {
+          hideLoading();
+        }
+      });
+
+      // Copy to clipboard
+      copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(output.textContent).then(() => {
+          copySuccess.classList.add('show');
+          setTimeout(() => {
+            copySuccess.classList.remove('show');
+          }, 2000);
+        });
+      });
+
+      // Select JS/TS files button
+      selectJsTsButton.addEventListener('click', () => {
+        allFiles.forEach((file) => {
+          file.selected = file.isJsTs;
+        });
+        displayFileTree();
+      });
+
+      // Select all files button
+      selectAllButton.addEventListener('click', () => {
+        allFiles.forEach((file) => {
+          file.selected = true;
+        });
+        displayFileTree();
+      });
+
+      // Deselect all files button
+      deselectAllButton.addEventListener('click', () => {
+        allFiles.forEach((file) => {
+          file.selected = false;
+        });
+        displayFileTree();
+      });
+
+      // File filter
+      fileFilter.addEventListener('input', () => {
+        displayFileTree();
+      });
+
+      // Process imports
+      async function processImports(file, depth = 0) {
+        // Skip if already processed or max depth reached
+        if (
+          processedDependencies.has(file.path) ||
+          depth >= parseInt(maxDepth.value)
+        ) {
+          return;
+        }
+
+        // Add file to dependencies
+        processedDependencies.set(file.path, file.content);
+
+        // Extract imports
+        const imports = extractImports(file.content, file.path);
+
+        // Process each import
+        for (const importPath of imports) {
+          const resolvedFile = resolveImportPath(importPath, file.path);
+          if (resolvedFile) {
+            await processImports(resolvedFile, depth + 1);
+          }
+        }
+      }
+
+      // Extract imports from a JS/TS file
+      function extractImports(content, filePath) {
+        const imports = new Set();
+
+        // Simple regex to find imports
+        const importRegexes = [
+          /import\s+.+?\s+from\s+['"]([^'"]+)['"]/g, // import X from 'path'
+          /import\s+['"]([^'"]+)['"]/g, // import 'path'
+          /require\s*\(\s*['"]([^'"]+)['"]\s*\)/g, // require('path')
+          /import\s*\(\s*['"]([^'"]+)['"]\s*\)/g, // import('path')
+        ];
+
+        for (const regex of importRegexes) {
+          let match;
+          while ((match = regex.exec(content)) !== null) {
+            const importPath = match[1];
+
+            // Only include relative imports or aliases
+            if (importPath.startsWith('.') || importPath.startsWith('@')) {
+              imports.add(importPath);
+            }
+          }
+        }
+
+        return Array.from(imports);
+      }
+
+      // Resolve import path to actual file
+      function resolveImportPath(importPath, fromFilePath) {
+        // Handle alias imports
+        if (importPath.startsWith('@')) {
+          for (const [alias, dir] of Object.entries(CONFIG.aliasMap)) {
+            if (importPath.startsWith(alias)) {
+              // Replace alias with directory
+              const nonAliasPath = importPath.replace(alias, dir);
+              const possibleFiles = findPossibleFiles(nonAliasPath);
+
+              for (const possibleFile of possibleFiles) {
+                const matchingFile = allFiles.find((f) =>
+                  f.path.endsWith(possibleFile)
+                );
+                if (matchingFile) {
+                  return matchingFile;
+                }
+              }
+            }
+          }
+        }
+
+        // Handle relative imports
+        if (importPath.startsWith('.')) {
+          const basePath = fromFilePath.split('/').slice(0, -1).join('/');
+          const resolvedPath = normalizePath(`${basePath}/${importPath}`);
+          const possibleFiles = findPossibleFiles(resolvedPath);
+
+          for (const possibleFile of possibleFiles) {
+            const matchingFile = allFiles.find((f) =>
+              f.path.endsWith(possibleFile)
+            );
+            if (matchingFile) {
+              return matchingFile;
+            }
+          }
+        }
+
+        return null;
+      }
+
+      // Find possible file variations (handle extensions and index files)
+      function findPossibleFiles(basePath) {
+        const result = [];
+        const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+
+        // Try with direct path
+        result.push(basePath);
+
+        // Try adding extensions
+        for (const ext of extensions) {
+          result.push(`${basePath}${ext}`);
+        }
+
+        // Try with /index.* variations
+        for (const ext of extensions) {
+          result.push(`${basePath}/index${ext}`);
+        }
+
+        return result;
+      }
+
+      // Normalize a path (handle ../. etc)
+      function normalizePath(path) {
+        const parts = path.split('/');
+        const result = [];
+
+        for (const part of parts) {
+          if (part === '.') {
+            continue;
+          } else if (part === '..') {
+            result.pop();
+          } else {
+            result.push(part);
+          }
+        }
+
+        return result.join('/');
+      }
+
+      // Format final prompt with simplified output
+      function formatPrompt(files) {
+        let prompt = '';
+
+        // Sort files by path for consistent output
+        files.sort(([pathA], [pathB]) => pathA.localeCompare(pathB));
+
+        // Generate clean output format
+        for (const [path, content] of files) {
+          prompt += `${path}:\n\`\`\`\n${content}\n\`\`\`\n\n`;
+        }
+
+        return prompt.trim();
+      }
+
+      // Recursively get files from directory entry
+      async function getFilesFromEntry(entry, path = '') {
+        const files = [];
+
+        if (entry.isFile) {
+          const file = await new Promise((resolve) => entry.file(resolve));
+          file.filePath = `${path}${entry.name}`;
+          files.push(file);
+        } else if (entry.isDirectory) {
+          const dirPath = `${path}${entry.name}/`;
+
+          // Skip excluded folders
+          if (shouldSkipFolder(dirPath, getExclusionConfig().folders)) {
+            return files;
+          }
+
+          const dirReader = entry.createReader();
+          const entries = await readEntriesBatch(dirReader, []);
+
+          for (const childEntry of entries) {
+            files.push(...(await getFilesFromEntry(childEntry, dirPath)));
+          }
+        }
+
+        return files;
+      }
+
+      // Read all entries from a directory reader (handling batches)
+      async function readEntriesBatch(dirReader, allEntries = []) {
+        const entries = await new Promise((resolve) =>
+          dirReader.readEntries(resolve)
+        );
+
+        if (entries.length > 0) {
+          allEntries.push(...entries);
+          return readEntriesBatch(dirReader, allEntries);
+        }
+
+        return allEntries;
+      }
+
+      // Check if path contains any excluded folder
+      function shouldSkipFolder(path, excludedFolders) {
+        return excludedFolders.some((folder) => path.includes(folder));
+      }
+
+      // Read file content as text
+      function readFileContent(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (e) => resolve(e.target.result);
+          reader.onerror = (e) => reject(e);
+          reader.readAsText(file);
+        });
+      }
+
+      // Estimate token count (rough approximation)
+      function estimateTokens(text) {
+        // Simple approximation: ~4 characters per token for English text
+        return Math.ceil(text.length / 4);
+      }
+
+      // Show loading spinner
+      function showLoading() {
+        loading.classList.remove('hidden');
+      }
+
+      // Hide loading spinner
+      function hideLoading() {
+        loading.classList.add('hidden');
+      }
+    </script>
+  </body>
+</html>
